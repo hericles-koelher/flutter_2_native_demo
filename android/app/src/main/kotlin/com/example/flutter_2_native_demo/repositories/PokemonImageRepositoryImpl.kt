@@ -14,7 +14,7 @@ class PokemonImageRepositoryImpl : PokemonImageRepository {
         .create(RetrofitPokemonImageRepository::class.java)
 
     override fun getImage(pokemonIndex: Int): ByteArray {
-        val pokemonImageName = "${pokemonIndex.toString().padStart(0, '0')}.png"
+        val pokemonImageName = "${pokemonIndex.toString().padStart(3, '0')}.png"
 
         val response = retrofitClient.getImage(pokemonImageName).execute()
 
